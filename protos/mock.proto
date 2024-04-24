@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mock;
+
+message MessageRequest {
+    string id = 1;
+}
+
+message MessageResponse {
+    string greeting = 1;
+}
+
+service MockService {
+    rpc singleResponseMock(MessageRequest) returns (MessageResponse);
+}

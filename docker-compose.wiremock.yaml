@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  wiremock:
+    image: custom/wiremock_grpc:3.5.2
+    container_name: wiremock
+    environment:
+      - TZ=Europe/Amsterdam
+    volumes:
+      - ./protos/mock.proto:/home/wiremock/protos/mock.proto
+    ports:
+      - 8080:8080
